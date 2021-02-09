@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/index.css">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    </head>
+    <body>
+        <div class="container">
+            <div class="sidebar open">
+                <div class="sidebar__content">
+                    <h1 class="heading">Meet the team</h1>
+                    <div class="filters">
+                        <div class="filters__input-container">
+                            <input class="filters__input" placeholder="Search by name" />
+                        </div>
+                    
+                        <div class="filters__categories">
+                            <span class="filters__categories__item selected" data-category="All">All</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar__trigger">
+                    <i class="material-icons sidebar__trigger__icon">double_arrow</i>
+                </div>
+            </div>
+            <div class="content">
+                <div class="tiles">
+                </div>
+                <div class="pagination">
+                    <div class="pagination__button prev"><i class="material-icons">chevron_left</i>Previous</div>
+                    <div class="pagination__page-number current">1</div>
+                    <div class="pagination__page-number">2</div>
+                    <div class="pagination__page-number">3</div>
+                    <div class="pagination__button next active">Next<i class="material-icons">chevron_right</i></div>
+                </div>        
+            </div>
+        </div>
+        
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script type="module" src="scripts/index.js" async defer></script>
+    </body>
+</html>

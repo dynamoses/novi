@@ -1,0 +1,27 @@
+{
+  "name": "novicell",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node-sass sass -o css",
+    "watch": "node-sass sass -o css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dynamoses/novi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dynamoses/novi/issues"
+  },
+  "homepage": "https://github.com/dynamoses/novi#readme",
+  "dependencies": {
+    "eslint": "^7.19.0",
+    "node-sass": "^5.0.0"
+  }
+  
+}

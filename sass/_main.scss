@@ -1,0 +1,210 @@
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1100px;
+  width: 98%;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 100px;
+  @media screen and (max-width: $bp-lg) {
+    flex-direction: column;
+    align-items: center;
+  }
+  min-height: 80vh;
+}
+
+.sidebar {
+  max-width: 300px;
+  padding: 0 20px;
+  display: flex;
+  @media screen and (max-width: $bp-lg) {
+    max-width: 600px;
+  }
+
+  @media screen and (min-width: $bp-lg-min) {
+    &.open {
+      .sidebar__content {
+        width: 100%;
+      }
+      .sidebar__trigger {
+        &__icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  &__content {
+    transition: width $transition-main;
+    width: 100%;
+    overflow: hidden;
+    @media screen and (min-width: $bp-lg-min) {
+      width: 0;
+    }
+    .filters {
+      display: flex;
+      flex-direction: column;
+      &__input-container {
+        position: relative;
+        &:after {
+          content: "search";
+          font-family: "Material Icons";
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 20px;
+          font-size: 1.3em;
+          color: #666;
+        }
+      }
+      &__input {
+        border: 0;
+        border-bottom: 1px solid #777;
+        padding: 10px;
+        width: 90%;
+      }
+      &__categories {
+        margin-top: 20px;
+        &__item {
+          padding: 5px 10px;
+          background-color: #d6d4d4;
+          border-radius: 3px;
+          font-size: $font-small;
+          display: inline-block;
+          margin: 0 10px 10px 0;
+          cursor: pointer;
+          transition: background-color $transition-main;
+
+          &:hover {
+            background-color: #b3aeae;
+          }
+          &.selected {
+            background-color: $brand-blue;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  &__trigger {
+    padding: 50px 5px 0;
+    width: 30px;
+    height: calc(100% - 140px);
+    background-color: #fff;
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+    transition: background-color $transition-main;
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+      background-color: darken(#fff, 10%);
+    }
+    @media screen and (max-width: $bp-lg) {
+      display: none;
+    }
+  }
+}
+
+.content {
+  width: 66%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @media screen and (max-width: $bp-lg) {
+    width: 100%;
+  }
+
+  .tiles {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+      width: calc(94% / 3);
+      box-shadow: 1px 1px 5px -1px #000000;
+      transition: all $transition-main;
+      margin: 1%;
+      cursor: pointer;
+      @media screen and (max-width: $bp-md) {
+        width: calc(94% / 2);
+      }
+
+      &:hover {
+        box-shadow: 2px 2px 15px -1px #000000;
+      }
+
+      &__image-holder {
+        padding-top: 100%;
+        position: relative;
+      }
+
+      &__image {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        transform: translateY(-50%);
+      }
+      &__title {
+        padding: 15px;
+        background-color: #fff;
+        &__name {
+          font-weight: bold;
+        }
+        &__job {
+          margin-top: 5px;
+          font-size: $font-small;
+        }
+      }
+    }
+  }
+  .pagination {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: $bp-md) {
+      font-size: $font-small;
+    }
+    &__button {
+      cursor: pointer;
+      display: flex;
+      margin: 0 30px;
+      color: #999;
+      font-weight: bold;
+      transition: color $transition-main;
+      &.active {
+        color: $brand-blue;
+
+        &:hover {
+          color: lighten($brand-blue, 20%);
+        }
+      }
+    }
+    &__page-number {
+      cursor: pointer;
+      padding: 10px 20px;
+      @media screen and (max-width: $bp-md) {
+        padding: 10px;
+      }
+      font-weight: bold;
+      border-bottom: 3px solid transparent;
+      transition: background-color $transition-main;
+      &.current {
+        border-color: $brand-blue;
+        color: $brand-blue;
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+      &:hover {
+        background-color: #d8d6d6;
+      }
+    }
+  }
+}
